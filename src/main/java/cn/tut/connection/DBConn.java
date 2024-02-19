@@ -11,8 +11,7 @@ public class DBConn {
 		if (connection == null) {
 			try {
 				Class.forName("com.mysql.cj.jdbc.Driver");
-				connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ecommerce_cart", "root",
-						"aime@2023");
+				connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ecommerce_cart", "root","aime@2023");
 				System.out.println("Connected to the database");
 			} catch (ClassNotFoundException | SQLException e) {
 				System.err.println("Error connecting to the database:");
