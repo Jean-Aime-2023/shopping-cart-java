@@ -1,14 +1,17 @@
+<%@page import="cn.tut.connection.DBConn"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Insert Title Here</title>
-<%@include file="includes/head.jsp" %>
+<title>Welcome to shopping cart</title>
+<%@include file="includes/head.jsp"%>
 </head>
 <body>
-<h1>Hello World</h1>
+	<%@include file="includes/navbar.jsp"%> 
+	
+	<% out.print(DBConn.getConnection()); %>
 
-<%@include file="includes/footer.jsp" %>
+	<%@include file="includes/footer.jsp"%>
 </body>
 </html>
