@@ -10,8 +10,8 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 
 import cn.tut.connection.DBConn;
+import cn.tut.dao.UserDao;
 import cn.tut.model.User;
-import cn.tut.model.dao.UserDao;
 
 @WebServlet(name = "LoginServlet", value = "/user-login")
 public class LoginServlet extends HttpServlet {
