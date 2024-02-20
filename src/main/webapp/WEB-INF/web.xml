@@ -60,6 +60,15 @@
 			<servlet-name>Remove from cart</servlet-name>
 			<url-pattern>/remove-from-cart</url-pattern>
 		</servlet-mapping>
+		
+		<servlet>
+			<servlet-name>Order now</servlet-name>
+			<servlet-class>OrderNowServlet</servlet-class>
+		</servlet>
+		<servlet-mapping>
+			<servlet-name>Order now</servlet-name>
+			<url-pattern>/order-now</url-pattern>
+		</servlet-mapping>
 	</web-app>
 </element>
 
