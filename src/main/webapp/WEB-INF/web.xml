@@ -78,6 +78,15 @@
 			<servlet-name>Cart check out</servlet-name>
 			<url-pattern>/cart-check-out</url-pattern>
 		</servlet-mapping>
+		
+		<servlet>
+			<servlet-name>Cancel order</servlet-name>
+			<servlet-class>CancelOrderServlet</servlet-class>
+		</servlet>
+		<servlet-mapping>
+			<servlet-name>Cancel order</servlet-name>
+			<url-pattern>/cancel-order</url-pattern>
+		</servlet-mapping>
 	</web-app>
 </element>
 
