@@ -69,6 +69,15 @@
 			<servlet-name>Order now</servlet-name>
 			<url-pattern>/order-now</url-pattern>
 		</servlet-mapping>
+		
+		<servlet>
+			<servlet-name>Cart check out</servlet-name>
+			<servlet-class>CheckOutServlet</servlet-class>
+		</servlet>
+		<servlet-mapping>
+			<servlet-name>Cart check out</servlet-name>
+			<url-pattern>/cart-check-out</url-pattern>
+		</servlet-mapping>
 	</web-app>
 </element>
 
