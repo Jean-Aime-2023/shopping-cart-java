@@ -11,7 +11,7 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav mb-auto mb-2 mb-lg-0">
 						<li class="nav-item"><a class="nav-link active" aria-current="page" href="index.jsp">Home</a></li>
-						<li class="nav-item"><a class="nav-link" href="cart.jsp">Cart</a></li>
+						<li class="nav-item"><a class="nav-link" href="cart.jsp">Cart<span class="badge badge-danger bg-danger px-1">${ cart_list.size() }</span></a></li>
 						<%
 						if(auth != null){%>
 							<li class="nav-item"><a class="nav-link" href="orders.jsp">Orders</a></li>
@@ -20,10 +20,6 @@
 							<li class="nav-item"><a class="nav-link" href="login.jsp">Login</a></li>
 						<%}
 						%>
-						
-						
-						
-						
 					</ul>
 				</div>
 			</div>

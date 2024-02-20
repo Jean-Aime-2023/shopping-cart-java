@@ -1,4 +1,5 @@
-<%@page import="cn.tut.model.User"%>
+<%@page import="java.util.*"%>
+<%@page import="cn.tut.model.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="includes/head.jsp"%>
@@ -6,6 +7,10 @@
 User auth = (User) request.getSession().getAttribute("auth");
 if (auth != null) {
 	response.sendRedirect("index.jsp");
+}
+ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
+if(cart_list != null){
+	request.setAttribute("cart_list", cart_list);
 }
 %>
 <!DOCTYPE html>

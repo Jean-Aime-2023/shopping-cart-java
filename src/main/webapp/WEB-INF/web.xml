@@ -42,6 +42,15 @@
 			<servlet-name>add to cart</servlet-name>
 			<url-pattern>/add-to-cart</url-pattern>
 		</servlet-mapping>
+		
+		<servlet>
+			<servlet-name>Quantity Inc DecServlet</servlet-name>
+			<servlet-class>QuantityIncDecServlet</servlet-class>
+		</servlet>
+		<servlet-mapping>
+			<servlet-name>Quantity Inc DecServlet</servlet-name>
+			<url-pattern>/quantity-inc-dec</url-pattern>
+		</servlet-mapping>
 	</web-app>
 </element>
 

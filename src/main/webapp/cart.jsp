@@ -16,7 +16,9 @@ List<Cart> cartProduct = null;
 if(cart_list != null){
 	ProductDao pDao = new ProductDao(DBConn.getConnection());
 	cartProduct = pDao.getCartProducts(cart_list);
+	double total = pDao.getTotalCartPrice(cart_list);
 	request.setAttribute("cart_list", cart_list);
+	request.setAttribute("total",total);
 }
 %>
 <!DOCTYPE html>
@@ -40,7 +42,7 @@ font-size: 25px;
 
 	<div class="container">
 		<div class="d-flex py-3">
-			Total price: $452 <a class="mx-3 btn btn-primary" href="#">Check
+			<h3>Total price: $ ${(total>0)?total:0 }</h3> <a class="mx-3 btn btn-primary" href="#">Check
 				Out</a>
 		</div>
 		<table class="table table-light">
@@ -65,10 +67,10 @@ font-size: 25px;
 							<input type="hidden" name="id" value="<%=c.getId() %>" class="form-input">
 							<div class="form-group d-flex justify-content-between">
 
-								<a class="btn btn-sm btn-decre" href="#"> <i
+								<a class="btn btn-sm btn-decre" href="quantity-inc-dec"> <i
 									class="fas fa-minus-square"></i>
 								</a> <input type="text" name="quantity" value="1" class="form-input"
-									readonly> <a class="btn btn-sm btn-incre" href="">
+									readonly> <a class="btn btn-sm btn-incre" href="quantity-inc-dec">
 									<i class="fas fa-plus-square"></i>
 								</a>
 							</div>
