@@ -1,3 +1,5 @@
+<%@page import="cn.tut.dao.ProductDao"%>
+<%@page import="java.util.*"%>
 <%@page import="cn.tut.model.User"%>
 <%@page import="cn.tut.model.*"%>
 <%@page import="cn.tut.connection.DBConn"%>
@@ -7,6 +9,14 @@
 User auth = (User) request.getSession().getAttribute("auth");
 if (auth != null) {
 	request.setAttribute("auth", auth);
+}
+
+ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
+List<Cart> cartProduct = null;
+if(cart_list != null){
+	ProductDao pDao = new ProductDao(DBConn.getConnection());
+	cartProduct = pDao.getCartProducts(cart_list);
+	request.setAttribute("cart_list", cart_list);
 }
 %>
 <!DOCTYPE html>
@@ -44,13 +54,15 @@ font-size: 25px;
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>Men Shoes</td>
-					<td>Shoes</td>
-					<td>$45</td>
+			<% if(cart_list != null){
+				for(Cart c:cartProduct){%>
+					<tr>
+					<td><%=c.getName() %></td>
+					<td><%=c.getCategory() %></td>
+					<td>$<%=c.getPrice() %></td>
 					<td>
 						<form action="" method="post" class="form-inline">
-							<input type="hidden" name="id" value="1" class="form-input">
+							<input type="hidden" name="id" value="<%=c.getId() %>" class="form-input">
 							<div class="form-group d-flex justify-content-between">
 
 								<a class="btn btn-sm btn-decre" href="#"> <i
@@ -64,6 +76,9 @@ font-size: 25px;
 					</td>
 					<td><a class="btn btn-sm btn-danger" href="#">Remove</a></td>
 				</tr>
+				<%}
+			}%>
+				
 			</tbody>
 		</table>
 
