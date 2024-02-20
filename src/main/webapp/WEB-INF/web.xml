@@ -33,6 +33,15 @@
 			<servlet-name>logout</servlet-name>
 			<url-pattern>/log-out</url-pattern>
 		</servlet-mapping>
+		
+		<servlet>
+			<servlet-name>add to cart</servlet-name>
+			<servlet-class>AddToCartServlet</servlet-class>
+		</servlet>
+		<servlet-mapping>
+			<servlet-name>add to cart</servlet-name>
+			<url-pattern>/add-to-cart</url-pattern>
+		</servlet-mapping>
 	</web-app>
 </element>
 
