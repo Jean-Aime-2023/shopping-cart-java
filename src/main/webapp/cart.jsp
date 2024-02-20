@@ -67,7 +67,6 @@ if (cart_list != null) {
 					<td><%=c.getName()%></td>
 					<td><%=c.getCategory()%></td>
 					<td>$<%= dcf.format(c.getPrice()) %></td>
-					
 					<td>
 						<form action="" method="post" class="form-inline">
 							<input type="hidden" name="id" value="<%=c.getId()%>"
